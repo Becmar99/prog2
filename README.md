@@ -1,8 +1,8 @@
 # Marc's MenuCalc
 # Einleitung
-Es geht beim Projekt darum 
+Mit Hilfe dieses Programms, werden Menüs auf die Anzahl der Gäste angepasst. Dabei berücksichtigt das Programm, welche Zutaten bereits in welcher Menge vorhanden sind und generiert entsprechend eine Einkaufsliste
 # Flow Chart
-<img width="445" alt="Projekt" src="https://user-images.githubusercontent.com/91119063/139456081-1f88bc27-0940-49c3-a637-eab8d894ae9b.png">
+![_Marc MenuCalc](https://user-images.githubusercontent.com/91119063/139461160-a49a444f-999a-4356-9a2b-d22745d8d365.png)
 
 # Anwendungen
 
