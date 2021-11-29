@@ -3,43 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <title>"Test"</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
 </head>
 <body>
-    <h1>Hallo und <3 Willkommen im MenuCalc</h1>
-    <h2>Was möchtest du heute kochen?</h2>
-    <a href="{{ url_for('menu')}}"> Rezept </a>
-    <!-- <a href="{{ url_for('flammkuchen')}}"> Let's go </a>-->
-    <br></br>
-
-<!--<form>
-  <div class="form-group"> <!--https://www.webmart.de/web/form-generator -->
-   <!-- <label>Wähle ein Menü aus</label> <select class="form-control" name="selectbox_name">
-      <option value="menu_1">
-        Tomatensuppe
-      </option>
-      <option value="menu_2">
-        Kürbissuppe
-      </option>
-      <option value="menu_3">
-        Rösti
-      </option>
-    </select>
-      <br></br>
-      <label for="menge"> <!--https://wiki.selfhtml.org/wiki/HTML/Tutorials/Formulare/input/number -->
-    <!--Anzahl Personen:
-    <input id="menge" type="number" min="1" max="10" step="1" value="1"> Personen
-  </label>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid2">
+    <a class="navbar-brand" href="#">MenuCalc Marc</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{{ url_for('hello') }}">Home</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{{ url_for('berechnung') }}">Berechnung</a>
+        </li>
+<ul>
+    </div>
   </div>
-    <br></br>
-</form>-->
+</nav>
+<div class="m-5">
+    <h1>Hallo und <3 Willkommen im MenuCalc</h1>
+    <h2>Was solls heute werden?</h2>
+    <br>
+
+
 <form method="POST">
     <input type="text" name="vorname" placeholder="Gib deinen Namen ein">
-    <br></br>
-    <input type="text" name="menu" placeholder="Was willst du kochen?"/>
-    <input type="number" name="anzahl" placeholder="Wie viele Leute?"/>
-    <button type="submit">Senden</button>
-</form>
+    <br>
+    <div class="form-group"> <!--https://www.webmart.de/web/form-generator -->
+   <label>Wähle ein Menü aus</label>
+     <!-- https://stackoverflow.com/questions/60793245/dropdown-menu-in-flask-jinja-from-list für direkte übernahme von Json Datei in Dropdownmenu-->
+      <select class="form-control" name="rezepteliste">
+          {% for name in rezepteliste %}
+            <option value="{{ name }}" SELECTED>{{ name }}</option>
+          {% endfor %}
+        </select>
+        <input type="number" class="form-control mt-3" id="formGroupExampleInput1" name="anzahl" placeholder="Anzahl Leute">
+        <input type="submit" class="btn btn-primary mt-1" value="Eintragen" name="eintragen">
 
+
+    </div>
+    <br>
+
+</form>
+</div>
 </body>
 </html>

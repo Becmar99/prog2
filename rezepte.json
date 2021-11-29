@@ -1,15 +1,42 @@
-{
-    "Tomatensuppe": {
-        "anzahl_personen": 2,
-        "artikel_1:": ">Tomaten",
-        "artikel_2": "Rahm",
-        "artikel_3": "Bouillon",
-        "mass_1": "gramm",
-        "mass_2": "dl",
-        "mass_3": "dl",
-        "menge_1": 700,
-        "menge_2": 2,
-        "menge_3": 6,
-        "titel": "Tomatensuppe"
+[
+    {
+    "rezeptname": "Tomatensuppe",
+        "zutaten": [
+            {
+                "name":"Tomaten",
+                "menge": 2,
+                "mengenart": "Stk"
+            },
+            {
+                "name":"Rahm",
+                "menge": 3,
+                "mengenart": "dl"
+            },
+            {
+                "name":"Buillon",
+                "menge": 2,
+                "mengenart": "dl"
+            }
+        ]
+    },
+     {
+    "rezeptname": "Kuerbissuppe",
+        "zutaten": [
+            {
+                "name":"Tomaten",
+                "menge": 2,
+                "mengenart": "Stk"
+            },
+            {
+                "name":"Rahm",
+                "menge": 3,
+                "mengenart": "dl"
+            },
+            {
+                "name":"Buillon",
+                "menge": 2,
+                "mengenart": "dl"
+            }
+        ]
     }
-}
+]

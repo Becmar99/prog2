@@ -2,60 +2,63 @@ from flask import Flask
 from flask import render_template
 from flask import request
 import json
+
 # https://www.w3schools.com/python/python_json.asp
 # https://www.programiz.com/python-programming/json
 
-# a Python object (dict):
-rezepte = {
-  "Tomatensuppe": {
-    "titel": "Tomatensuppe",
-    "anzahl_personen": 2,
-    "menge_1": 700,
-    "mass_1": "gramm",
-    "artikel_1:": ">Tomaten",
-    "menge_2": 2,
-    "mass_2": "dl",
-    "artikel_2": "Rahm",
-    "menge_3": 6,
-    "mass_3": "dl",
-    "artikel_3": "Bouillon"}
-}
 
-with open('rezepte.json', 'w') as f:
-  json.dump(rezepte, f, indent=4, sort_keys=True)
+# with open('rezepte.json', 'w') as f:
+# json.dump(rezepte, f, indent=4, sort_keys=True)
+
 
 app = Flask("Hello World")
 
+rezeptname = ""
 
 @app.route("/hello", methods=['GET', 'POST'])
 def hello():
+    r = open("rezepte.json")
+    rezepte_list = json.load(r)
+    rezeptenamen = []
+    rezepteindex = 0
+    #um Menu in Dropdown hinzuzufügen
+    for item in rezepte_list:
+        rezeptenamen.append(rezepte_list[rezepteindex]["rezeptname"])
+        rezepteindex = rezepteindex + 1
+    print(rezeptenamen)
+    #Global Funktion um die Variabel in die nächste Seite zu übernehmen
     if request.method == 'POST':
-        ziel_person = request.form['vorname']
-        rueckgabe_string_name = "" + ziel_person + ""
-        ziel_person = request.form['menu']
-        rueckgabe_string = " " + ziel_person + " "
-        ziel_anzahl = request.form['anzahl']
-        rueckgabe_string1 = " " + ziel_anzahl + " Personen"
-#dict holen nach rezept suchen und dann berechen und mengen anpassen
-        return render_template("begruessung.html", ansprechperson=rueckgabe_string_name, menu=rueckgabe_string, anzahl=rueckgabe_string1)
-
-    return render_template('index.html')
+        if request.form.get("eintragen") == "Eintragen":
+            global rezeptname
+            rezeptname = request.form["rezepteliste"]
+            global personenzahl
+            personenzahl = request.form["anzahl"]
+    return render_template('index.html', rezepteliste=rezeptenamen)
 
 
-@app.route("/test")
-def test():
-    return "Super - wie immer"
+@app.route("/berechnung")
+def berechnung():
+    r = open("rezepte.json")
+    rezepte_list = json.load(r)
+    rezepteindex2 = 0
+    zutatenindex = 0
+    global rezeptname
+    global personenzahl
+    fixemenge = 0
+    # hier werden die Daten aus der Json Datei geholt
 
-@app.route("/menu")
-def menu():
-    text = "Tomaten"
-    return text
+    for item in rezepte_list:
+        if rezeptname == rezepte_list[rezepteindex2]["rezeptname"]:
+            for item in rezepte_list[rezepteindex2]["zutaten"]:
+                fixemenge = int(rezepte_list[rezepteindex2]["zutaten"][zutatenindex]["menge"]) * int(personenzahl)
+                zutatenindex = zutatenindex + 1
+                print(fixemenge)
+
+        rezepteindex2 = rezepteindex2 + 1
 
 
-@app.route("/flammkuchen")
-def flammkuchen():
-    return "Zwiebeln, Speck, Creme"
+    return fixemenge
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5000) #127.0.0.1 ist immer der Home-Browser
+    app.run(debug=True, port=5000)  # 127.0.0.1 ist immer der Home-Browser
