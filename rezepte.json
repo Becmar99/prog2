@@ -23,8 +23,8 @@
     "rezeptname": "Kuerbissuppe",
         "zutaten": [
             {
-                "name":"Tomaten",
-                "menge": 2,
+                "name":"Kürbis",
+                "menge": 1,
                 "mengenart": "Stk"
             },
             {
@@ -36,6 +36,26 @@
                 "name":"Buillon",
                 "menge": 2,
                 "mengenart": "dl"
+            }
+        ]
+    },
+    {
+    "rezeptname": "Roesti",
+        "zutaten": [
+            {
+                "name":"Kartoffeln",
+                "menge": 3,
+                "mengenart": "stk"
+            },
+            {
+                "name":"Butter",
+                "menge": 50,
+                "mengenart": "g"
+            },
+            {
+                "name":"Käse",
+                "menge": 100,
+                "mengenart": "g"
             }
         ]
     }

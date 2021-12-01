@@ -14,7 +14,8 @@ import json
 app = Flask("Hello World")
 
 rezeptname = ""
-
+global rezeptberechnet
+rezeptberechnet = []
 @app.route("/hello", methods=['GET', 'POST'])
 def hello():
     r = open("rezepte.json")
@@ -46,18 +47,18 @@ def berechnung():
     global personenzahl
     fixemenge = 0
     # hier werden die Daten aus der Json Datei geholt
+    global rezeptberechnet
+    global rezeptberechnet1
 
     for item in rezepte_list:
         if rezeptname == rezepte_list[rezepteindex2]["rezeptname"]:
             for item in rezepte_list[rezepteindex2]["zutaten"]:
-                fixemenge = int(rezepte_list[rezepteindex2]["zutaten"][zutatenindex]["menge"]) * int(personenzahl)
+                rezeptberechnet.append(rezepte_list[rezepteindex2]["zutaten"][zutatenindex])
                 zutatenindex = zutatenindex + 1
-                print(fixemenge)
-
         rezepteindex2 = rezepteindex2 + 1
 
+    return render_template('begruessung.html', fixemenge=fixemenge, rezeptberechnet=rezeptberechnet)
 
-    return fixemenge
 
 
 if __name__ == "__main__":
