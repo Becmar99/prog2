@@ -16,8 +16,10 @@ app = Flask("Hello World")
 rezeptname = ""
 global rezeptberechnet
 rezeptberechnet = []
+@app.route("/", methods=['GET', 'POST'])
 @app.route("/hello", methods=['GET', 'POST'])
 def hello():
+
     r = open("rezepte.json")
     rezepte_list = json.load(r)
     rezeptenamen = []
@@ -34,9 +36,13 @@ def hello():
             rezeptname = request.form["rezepteliste"]
             global personenzahl
             personenzahl = request.form["anzahl"]
+            global vorname
+            vorname = request.form["vorname"]
+            global rezepteliste
+            rezepteliste = request.form["rezepteliste"]
     return render_template('index.html', rezepteliste=rezeptenamen)
 
-
+#mit url for die Parameter mitgeben um die global zu überspringen (um gekapselt zu programmieren)
 @app.route("/berechnung")
 def berechnung():
     r = open("rezepte.json")
@@ -45,6 +51,10 @@ def berechnung():
     zutatenindex = 0
     global rezeptname
     global personenzahl
+    global vorname
+    vorname=vorname
+    global rezepteliste
+    rezepteliste=rezepteliste
     fixemenge = 0
     # hier werden die Daten aus der Json Datei geholt
     global rezeptberechnet
@@ -57,7 +67,7 @@ def berechnung():
                 zutatenindex = zutatenindex + 1
         rezepteindex2 = rezepteindex2 + 1
 
-    return render_template('begruessung.html', fixemenge=fixemenge, rezeptberechnet=rezeptberechnet)
+    return render_template('begruessung.html', fixemenge=fixemenge, rezeptberechnet=rezeptberechnet, vorname=vorname, rezepteliste=rezepteliste, personenzahl=personenzahl)
 
 
 

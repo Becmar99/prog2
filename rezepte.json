@@ -23,7 +23,7 @@
     "rezeptname": "Kuerbissuppe",
         "zutaten": [
             {
-                "name":"Kürbis",
+                "name":"Kuerbis",
                 "menge": 1,
                 "mengenart": "Stk"
             },
@@ -53,7 +53,7 @@
                 "mengenart": "g"
             },
             {
-                "name":"Käse",
+                "name":"Kaese",
                 "menge": 100,
                 "mengenart": "g"
             }
