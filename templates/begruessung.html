@@ -31,7 +31,7 @@
 Jinja durchloopen mit for die gewissen Items-->
 <!-- <p>{{ fixemenge }}</p> -->
   <!-- Für den Aufbau der Tabelle https://www.w3schools.com/html/html_tables.asp mit Bootstrap https://getbootstrap.com/docs/4.0/content/tables/ -->
-<table class="table">
+<table class="table table-bordered">
   <thead>
   <tr>
     <th scope="col">Zutat</th>
@@ -41,10 +41,12 @@ Jinja durchloopen mit for die gewissen Items-->
   </thead>
   <tbody>
   {% for zutat in rezeptberechnet %}
-    {% for key, value in zutat.items() %}
   <tr>
-    <td rowspan="3">{{ value }}</td>
-  {% endfor %}{% endfor %}
+    <td>{{ zutat["name"] }}</td>
+    <td>{{ zutat["menge"] }}</td>
+    <td>{{ zutat["mengenart"] }}</td>
+  </tr>
+{% endfor %}
     </tbody>
 
 </table>

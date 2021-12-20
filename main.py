@@ -22,24 +22,24 @@ def hello():
 
     r = open("rezepte.json")
     rezepte_list = json.load(r)
+    r2 = open("menuwahl.json")
+    menuwahl = json.load(r2)
     rezeptenamen = []
     rezepteindex = 0
     #um Menu in Dropdown hinzuzufügen
     for item in rezepte_list:
         rezeptenamen.append(rezepte_list[rezepteindex]["rezeptname"])
         rezepteindex = rezepteindex + 1
-    print(rezeptenamen)
     #Global Funktion um die Variabel in die nächste Seite zu übernehmen
     if request.method == 'POST':
         if request.form.get("eintragen") == "Eintragen":
-            global rezeptname
-            rezeptname = request.form["rezepteliste"]
-            global personenzahl
-            personenzahl = request.form["anzahl"]
-            global vorname
-            vorname = request.form["vorname"]
-            global rezepteliste
-            rezepteliste = request.form["rezepteliste"]
+            menuwahl["menu"] = request.form["rezepteliste"]
+            menuwahl["anzahlPersonen"] = request.form["anzahl"]
+            menuwahl["name"] = request.form["vorname"]
+
+        with open('menuwahl.json', 'w') as f:
+            json.dump(menuwahl, f, indent=4, sort_keys=True)
+
     return render_template('index.html', rezepteliste=rezeptenamen)
 
 #mit url for die Parameter mitgeben um die global zu überspringen (um gekapselt zu programmieren)
@@ -47,27 +47,28 @@ def hello():
 def berechnung():
     r = open("rezepte.json")
     rezepte_list = json.load(r)
+    r2 = open("menuwahl.json")
+    menuwahl = json.load(r2)
     rezepteindex2 = 0
     zutatenindex = 0
-    global rezeptname
-    global personenzahl
-    global vorname
-    vorname=vorname
-    global rezepteliste
-    rezepteliste=rezepteliste
-    fixemenge = 0
+
     # hier werden die Daten aus der Json Datei geholt
-    global rezeptberechnet
-    global rezeptberechnet1
+    rezeptberechnet = []
 
     for item in rezepte_list:
-        if rezeptname == rezepte_list[rezepteindex2]["rezeptname"]:
+        if menuwahl["menu"] == rezepte_list[rezepteindex2]["rezeptname"]:
             for item in rezepte_list[rezepteindex2]["zutaten"]:
                 rezeptberechnet.append(rezepte_list[rezepteindex2]["zutaten"][zutatenindex])
                 zutatenindex = zutatenindex + 1
         rezepteindex2 = rezepteindex2 + 1
+    print(rezeptberechnet)
+    berechnetindex = 0
+    for item in rezeptberechnet:
+        rezeptberechnet[berechnetindex]["menge"] = rezeptberechnet[berechnetindex]["menge"] * int(menuwahl["anzahlPersonen"])
+        berechnetindex = berechnetindex + 1
+    print(rezeptberechnet)
 
-    return render_template('begruessung.html', fixemenge=fixemenge, rezeptberechnet=rezeptberechnet, vorname=vorname, rezepteliste=rezepteliste, personenzahl=personenzahl)
+    return render_template('begruessung.html', rezeptberechnet=rezeptberechnet, vorname=menuwahl["name"], rezepteliste=menuwahl["menu"], personenzahl=menuwahl["anzahlPersonen"])
 
 
 
