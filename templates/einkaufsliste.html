@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Begruessungshtml</title>
+    <title>Einkaufsliste</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
 </head>
 <body>
@@ -27,35 +27,6 @@
     </div>
   </div>
 </nav>
-<div class="m-5">
-<h1>Hallo {{ vorname }} <br> Du willst also  {{ rezepteliste }} für {{ personenzahl }} Personen kochen. <br>Gute Wahl!</br> </h1>
-<h2>Dafür brauchst du folgende Zutaten:</h2>
-<!--Hier dict mit angepasstem rezept eingeben
-Jinja durchloopen mit for die gewissen Items-->
-<!-- <p>{{ fixemenge }}</p> -->
-  <!-- Für den Aufbau der Tabelle https://www.w3schools.com/html/html_tables.asp mit Bootstrap https://getbootstrap.com/docs/4.0/content/tables/ -->
-<table class="table table-bordered">
-  <thead>
-  <tr>
-    <th scope="col">Zutat</th>
-    <th scope="col">Menge</th>
-    <th scope="col">Mengenart</th>
-  </tr>
-  </thead>
-  <tbody>
-  {% for zutat in rezeptberechnet %}
-  <tr>
-    <td>{{ zutat["name"] }}</td>
-    <td>{{ zutat["menge"] }}</td>
-    <td>{{ zutat["mengenart"] }}</td>
-  </tr>
-{% endfor %}
-    </tbody>
-
-</table>
-  <br>
-<h3>Folgende Zutaten musst du noch einkaufen gehen:</h3>
-  <input type="submit" class="btn btn-primary mt-1" value="Einkaufsliste" name="eintragen">
-    </div>
+<h1>Hier kommt die generierte Einkaufsliste:</h1>
 </body>
 </html>

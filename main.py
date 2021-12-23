@@ -30,7 +30,7 @@ def hello():
     for item in rezepte_list:
         rezeptenamen.append(rezepte_list[rezepteindex]["rezeptname"])
         rezepteindex = rezepteindex + 1
-    #Global Funktion um die Variabel in die nächste Seite zu übernehmen
+    #mit Hilfe einer JSON Datei werden die eigegebenen Daten in die Berechnung übertragen - global variabeln sind dadurch eliminiert
     if request.method == 'POST':
         if request.form.get("eintragen") == "Eintragen":
             menuwahl["menu"] = request.form["rezepteliste"]
@@ -69,6 +69,10 @@ def berechnung():
     print(rezeptberechnet)
 
     return render_template('begruessung.html', rezeptberechnet=rezeptberechnet, vorname=menuwahl["name"], rezepteliste=menuwahl["menu"], personenzahl=menuwahl["anzahlPersonen"])
+@app.route("/einkaufsliste")
+def einkaufsliste():
+    
+    return render_template('einkaufsliste.html')
 
 
 
