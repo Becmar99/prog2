@@ -32,7 +32,6 @@
 <h2>Dafür brauchst du folgende Zutaten:</h2>
 <!--Hier dict mit angepasstem rezept eingeben
 Jinja durchloopen mit for die gewissen Items-->
-<!-- <p>{{ fixemenge }}</p> -->
   <!-- Für den Aufbau der Tabelle https://www.w3schools.com/html/html_tables.asp mit Bootstrap https://getbootstrap.com/docs/4.0/content/tables/ -->
 <table class="table table-bordered">
   <thead>
@@ -55,7 +54,8 @@ Jinja durchloopen mit for die gewissen Items-->
 </table>
   <br>
 <h3>Folgende Zutaten musst du noch einkaufen gehen:</h3>
-  <input type="submit" class="btn btn-primary mt-1" value="Einkaufsliste" name="eintragen">
+  <!--<input type="submit" class="btn btn-primary mt-1" value="Einkaufsliste" name="eintragen"> brauch ich diesen Submit? -->
+  <a class="btn btn-primary mt-1" aria-current="page" href="{{ url_for('einkaufsliste') }}">Einkaufsliste</a>
     </div>
 </body>
 </html>

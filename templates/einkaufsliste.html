@@ -27,6 +27,29 @@
     </div>
   </div>
 </nav>
+<div class="m-5">
 <h1>Hier kommt die generierte Einkaufsliste:</h1>
+<table class="table table-bordered">
+  <thead>
+  <tr>
+    <th scope="col">Zutat</th>
+    <th scope="col">Menge</th>
+    <th scope="col">Mengenart</th>
+  </tr>
+  </thead>
+  <tbody>
+  {% for zutat in rezeptberechnet %}
+  <tr>
+    <td>{{ zutat["name"] }}</td>
+    <td>{{ zutat["menge"] }}</td>
+    <td>{{ zutat["mengenart"] }}</td>
+  </tr>
+{% endfor %}
+    </tbody>
+</table>
+  <!-- https://stackoverflow.com/questions/18191893/generate-pdf-from-html-in-div-using-javascript wurde verwendet
+  die Einkaufsliste ausdrucken zu können-->
+  <input type="submit" class="btn btn-primary mt-1" onclick="window.print();" value="Print">
+  </div>
 </body>
 </html>

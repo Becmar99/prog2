@@ -19,7 +19,7 @@ rezeptberechnet = []
 @app.route("/", methods=['GET', 'POST'])
 @app.route("/hello", methods=['GET', 'POST'])
 def hello():
-
+    #rezeptenamen werden hier vom json ins main.py geladen
     r = open("rezepte.json")
     rezepte_list = json.load(r)
     r2 = open("menuwahl.json")
@@ -71,7 +71,8 @@ def berechnung():
     return render_template('begruessung.html', rezeptberechnet=rezeptberechnet, vorname=menuwahl["name"], rezepteliste=menuwahl["menu"], personenzahl=menuwahl["anzahlPersonen"])
 @app.route("/einkaufsliste")
 def einkaufsliste():
-    
+
+
     return render_template('einkaufsliste.html')
 
 

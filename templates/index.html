@@ -23,7 +23,7 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{{ url_for('einkaufsliste') }}">Einkaufsliste</a>
         </li>
-<ul>
+</ul>
     </div>
   </div>
 </nav>
@@ -34,7 +34,7 @@
 
 
 <form method="POST">
-    <input type="text" name="vorname" placeholder="Gib deinen Namen ein">
+    <input type="text" name="vorname" placeholder="Dein Name">
     <br>
     <div class="form-group"> <!--https://www.webmart.de/web/form-generator -->
    <label>Wähle ein Menü aus</label>
@@ -45,7 +45,10 @@
           {% endfor %}
         </select>
         <input type="number" class="form-control mt-3" id="formGroupExampleInput1" name="anzahl" placeholder="Anzahl Leute">
-        <input type="submit" class="btn btn-primary mt-1" value="Eintragen" name="eintragen">
+        <input type="submit" class="btn btn-primary mt-1" value="Eintragen" name="eintragen"> <br>
+        <a class="btn btn-primary mt-1" aria-current="page" href="{{ url_for('berechnung') }}">zur Berechnung</a>
+        <!-- wie kann ich diese zwei buttons verbinden (submit und button) Button direkt mit der entsprechenden
+        HTML page verlinken?-->
 
 
     </div>
