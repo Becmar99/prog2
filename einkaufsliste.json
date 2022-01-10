@@ -1,0 +1,267 @@
+[
+    {
+        "ben\u00f6tigte_anzahl": 1,
+        "mindestbestand_anzahl": 6,
+        "name": "Kuerbis"
+    },
+    {
+        "ben\u00f6tigte_anzahl": 0,
+        "mindestbestand_anzahl": 7,
+        "name": "Rahm"
+    },
+    {
+        "ben\u00f6tigte_anzahl": 6,
+        "mindestbestand_anzahl": 11,
+        "name": "Kuerbis"
+    },
+    {
+        "ben\u00f6tigte_anzahl": 12,
+        "mindestbestand_anzahl": 22,
+        "name": "Rahm"
+    },
+    {
+        "ben\u00f6tigte_anzahl": 0,
+        "mindestbestand_anzahl": 6,
+        "name": "Buillon"
+    },
+    {
+        "ben\u00f6tigte_anzahl": 11,
+        "mindestbestand_anzahl": 16,
+        "name": "Kuerbis"
+    },
+    {
+        "ben\u00f6tigte_anzahl": 27,
+        "mindestbestand_anzahl": 37,
+        "name": "Rahm"
+    },
+    {
+        "ben\u00f6tigte_anzahl": 6,
+        "mindestbestand_anzahl": 16,
+        "name": "Buillon"
+    },
+    {
+        "ben\u00f6tigte_anzahl": 16,
+        "mindestbestand_anzahl": 21,
+        "name": "Kuerbis"
+    },
+    {
+        "ben\u00f6tigte_anzahl": 42,
+        "mindestbestand_anzahl": 52,
+        "name": "Rahm"
+    },
+    {
+        "ben\u00f6tigte_anzahl": 16,
+        "mindestbestand_anzahl": 26,
+        "name": "Buillon"
+    },
+    {
+        "ben\u00f6tigte_anzahl": 21,
+        "mindestbestand_anzahl": 26,
+        "name": "Kuerbis"
+    },
+    {
+        "ben\u00f6tigte_anzahl": 57,
+        "mindestbestand_anzahl": 67,
+        "name": "Rahm"
+    },
+    {
+        "ben\u00f6tigte_anzahl": 26,
+        "mindestbestand_anzahl": 36,
+        "name": "Buillon"
+    },
+    {
+        "ben\u00f6tigte_anzahl": 26,
+        "mindestbestand_anzahl": 31,
+        "name": "Kuerbis"
+    },
+    {
+        "ben\u00f6tigte_anzahl": 72,
+        "mindestbestand_anzahl": 82,
+        "name": "Rahm"
+    },
+    {
+        "ben\u00f6tigte_anzahl": 36,
+        "mindestbestand_anzahl": 46,
+        "name": "Buillon"
+    },
+    {
+        "ben\u00f6tigte_anzahl": 31,
+        "mindestbestand_anzahl": 36,
+        "name": "Kuerbis"
+    },
+    {
+        "ben\u00f6tigte_anzahl": 87,
+        "mindestbestand_anzahl": 97,
+        "name": "Rahm"
+    },
+    {
+        "ben\u00f6tigte_anzahl": 46,
+        "mindestbestand_anzahl": 56,
+        "name": "Buillon"
+    },
+    {
+        "ben\u00f6tigte_anzahl": 36,
+        "mindestbestand_anzahl": 41,
+        "name": "Kuerbis"
+    },
+    {
+        "ben\u00f6tigte_anzahl": 102,
+        "mindestbestand_anzahl": 112,
+        "name": "Rahm"
+    },
+    {
+        "ben\u00f6tigte_anzahl": 56,
+        "mindestbestand_anzahl": 66,
+        "name": "Buillon"
+    },
+    {
+        "ben\u00f6tigte_anzahl": 41,
+        "mindestbestand_anzahl": 46,
+        "name": "Kuerbis"
+    },
+    {
+        "ben\u00f6tigte_anzahl": 117,
+        "mindestbestand_anzahl": 127,
+        "name": "Rahm"
+    },
+    {
+        "ben\u00f6tigte_anzahl": 66,
+        "mindestbestand_anzahl": 76,
+        "name": "Buillon"
+    },
+    {
+        "ben\u00f6tigte_anzahl": 46,
+        "mindestbestand_anzahl": 51,
+        "name": "Kuerbis"
+    },
+    {
+        "ben\u00f6tigte_anzahl": 132,
+        "mindestbestand_anzahl": 142,
+        "name": "Rahm"
+    },
+    {
+        "ben\u00f6tigte_anzahl": 76,
+        "mindestbestand_anzahl": 86,
+        "name": "Buillon"
+    },
+    {
+        "ben\u00f6tigte_anzahl": 51,
+        "mindestbestand_anzahl": 56,
+        "name": "Kuerbis"
+    },
+    {
+        "ben\u00f6tigte_anzahl": 147,
+        "mindestbestand_anzahl": 157,
+        "name": "Rahm"
+    },
+    {
+        "ben\u00f6tigte_anzahl": 86,
+        "mindestbestand_anzahl": 96,
+        "name": "Buillon"
+    },
+    {
+        "ben\u00f6tigte_anzahl": 56,
+        "mindestbestand_anzahl": 61,
+        "name": "Kuerbis"
+    },
+    {
+        "ben\u00f6tigte_anzahl": 162,
+        "mindestbestand_anzahl": 172,
+        "name": "Rahm"
+    },
+    {
+        "ben\u00f6tigte_anzahl": 96,
+        "mindestbestand_anzahl": 106,
+        "name": "Buillon"
+    },
+    {
+        "ben\u00f6tigte_anzahl": 61,
+        "mindestbestand_anzahl": 66,
+        "name": "Kuerbis"
+    },
+    {
+        "ben\u00f6tigte_anzahl": 177,
+        "mindestbestand_anzahl": 187,
+        "name": "Rahm"
+    },
+    {
+        "ben\u00f6tigte_anzahl": 106,
+        "mindestbestand_anzahl": 116,
+        "name": "Buillon"
+    },
+    {
+        "ben\u00f6tigte_anzahl": 66,
+        "mindestbestand_anzahl": 71,
+        "name": "Kuerbis"
+    },
+    {
+        "ben\u00f6tigte_anzahl": 192,
+        "mindestbestand_anzahl": 202,
+        "name": "Rahm"
+    },
+    {
+        "ben\u00f6tigte_anzahl": 116,
+        "mindestbestand_anzahl": 126,
+        "name": "Buillon"
+    },
+    {
+        "ben\u00f6tigte_anzahl": 71,
+        "mindestbestand_anzahl": 76,
+        "name": "Kuerbis"
+    },
+    {
+        "ben\u00f6tigte_anzahl": 207,
+        "mindestbestand_anzahl": 217,
+        "name": "Rahm"
+    },
+    {
+        "ben\u00f6tigte_anzahl": 126,
+        "mindestbestand_anzahl": 136,
+        "name": "Buillon"
+    },
+    {
+        "ben\u00f6tigte_anzahl": 76,
+        "mindestbestand_anzahl": 81,
+        "name": "Kuerbis"
+    },
+    {
+        "ben\u00f6tigte_anzahl": 222,
+        "mindestbestand_anzahl": 232,
+        "name": "Rahm"
+    },
+    {
+        "ben\u00f6tigte_anzahl": 136,
+        "mindestbestand_anzahl": 146,
+        "name": "Buillon"
+    },
+    {
+        "ben\u00f6tigte_anzahl": 81,
+        "mindestbestand_anzahl": 86,
+        "name": "Kuerbis"
+    },
+    {
+        "ben\u00f6tigte_anzahl": 237,
+        "mindestbestand_anzahl": 247,
+        "name": "Rahm"
+    },
+    {
+        "ben\u00f6tigte_anzahl": 146,
+        "mindestbestand_anzahl": 156,
+        "name": "Buillon"
+    },
+    {
+        "ben\u00f6tigte_anzahl": 86,
+        "mindestbestand_anzahl": 91,
+        "name": "Kuerbis"
+    },
+    {
+        "ben\u00f6tigte_anzahl": 252,
+        "mindestbestand_anzahl": 262,
+        "name": "Rahm"
+    },
+    {
+        "ben\u00f6tigte_anzahl": 156,
+        "mindestbestand_anzahl": 166,
+        "name": "Buillon"
+    }
+]

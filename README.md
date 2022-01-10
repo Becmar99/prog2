@@ -17,18 +17,20 @@ je nach Verlauf des Projekts. Die FlowChart dient der besseren Übersicht und zu
 Für die Erstellung des MenuCalc wurden verschiedene Bausteine verwendet. 
 Den ganzen Berechnungsaspekt wurde im Pycharm abgewickelt. 
 Die Darstellung im HTML Format wurde mit Hilfe von Bootstrap Bausteinen erstellt und designed.
-Für die Abbildung der Menüs und der manuellen Erweiterung, wurden JSON Datein eingesetzt.
-Die JSON Dateien können mit weiteren Menus oder Zutaten in der Vorratskammer ergänzt werden.
+Für die Abbildung der Menüs und der manuellen Erweiterung, wurden JSON Datein eingesetzt. Die JSON Datei rezepte.json 
+kann durch einfügen weiterer Menüs in der gleichen dict. Struktur beliebig ergänzt werden. Dasselbe gilt bei 
+menuwahl.json und vorratskammer.json
 
 # Ablauf des Programms
 ***
 Der Nutzer gibt im ersten Feld seinen Namen ein und wählt das gewünschte Menu und die 
 Anzahl Personen für die er kochen möchte aus. 
 Durch das klicken des Berechnen Buttons wird aufgelistet, welche Zutaten und Mengen er für dieses Menu benötigt.
+In der HTML Seite Berechnung wird die Tabelle mit den Zutaten und den berechneten Mengen angegeben.
 Durch das Abgleichen mit der Vorratskammer, wird dem Nutzer eine Einkaufsliste erstellt und ausgegeben.
 Der Nutzer weiss somit, wieviel er noch einkaufen muss.
 Durch erneutes Laden der Seite kann dieser Vorgang für weitere Menüs durchgeführt werden.
-# Collaboration
+# Kollaboration
 ***
 Dieses Programm wurde im Rahmen des PROG2 Moduls an der FHGR erstellt. 
 Es kann beliebig verwendet werden und ist free downloadable. 

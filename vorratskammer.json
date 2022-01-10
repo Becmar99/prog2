@@ -1,0 +1,20 @@
+[
+    {
+        "menge": -86,
+        "mengenart": "Stk",
+        "mindestbestand": 5,
+        "zutat": "Kuerbis"
+    },
+    {
+        "menge": -252,
+        "mengenart": "dl",
+        "mindestbestand": 10,
+        "zutat": "Rahm"
+    },
+    {
+        "menge": -156,
+        "mengenart": "dl",
+        "mindestbestand": 10,
+        "zutat": "Buillon"
+    }
+]

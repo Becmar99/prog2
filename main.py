@@ -17,9 +17,8 @@ rezeptname = ""
 global rezeptberechnet
 rezeptberechnet = []
 @app.route("/", methods=['GET', 'POST'])
-@app.route("/hello", methods=['GET', 'POST'])
 def hello():
-    #rezeptenamen werden hier vom json ins main.py geladen
+#rezeptenamen werden hier vom json ins main.py geladen
     r = open("rezepte.json")
     rezepte_list = json.load(r)
     r2 = open("menuwahl.json")
@@ -66,14 +65,51 @@ def berechnung():
     for item in rezeptberechnet:
         rezeptberechnet[berechnetindex]["menge"] = rezeptberechnet[berechnetindex]["menge"] * int(menuwahl["anzahlPersonen"])
         berechnetindex = berechnetindex + 1
-    print(rezeptberechnet)
+    menuwahl["rezept_berechnet"] = rezeptberechnet
 
+    with open('menuwahl.json', 'w') as f:
+        json.dump(menuwahl, f, indent=4, sort_keys=True)
     return render_template('begruessung.html', rezeptberechnet=rezeptberechnet, vorname=menuwahl["name"], rezepteliste=menuwahl["menu"], personenzahl=menuwahl["anzahlPersonen"])
-@app.route("/einkaufsliste")
+@app.route("/einkaufsliste",methods=['GET', 'POST'])
 def einkaufsliste():
+    r = open("vorratskammer.json")
+    vorrats_list = json.load(r)
+    r2 = open("menuwahl.json")
+    menuwahl = json.load(r2)
+    r4 = open("einkaufsliste.json")
+    einkaufsliste = json.load(r4)
+    benötigte_anzahl = 0
+    mindestbestand_anzahl = 0
+    rezeptenamen=[]
 
+    for zutat in vorrats_list:
+        for item in menuwahl["rezept_berechnet"]:
+            if zutat["zutat"] == item["name"]:
+                zutat["menge"] = zutat["menge"] - item["menge"]
+                if zutat["menge"] <0:
+                    benötigte_anzahl=zutat["menge"]*-1
+                    mindestbestand_anzahl=benötigte_anzahl + zutat["mindestbestand"] #zwingend da zu wenig an Lager
+                    einkaufsliste.append({"name": item["name"], "benötigte_anzahl": benötigte_anzahl,
+                                          "mindestbestand_anzahl": mindestbestand_anzahl})
+                elif 0<= zutat["menge"] < zutat["mindestbestand"]:
+                    benötigte_anzahl=0
+                    mindestbestand_anzahl=zutat["mindestbestand"]-zutat["menge"] #um immer den Mindestbestand zu füllen
+                    einkaufsliste.append({"name": item["name"], "benötigte_anzahl": benötigte_anzahl,
+                                          "mindestbestand_anzahl": mindestbestand_anzahl})
 
-    return render_template('einkaufsliste.html')
+    with open('einkaufsliste.json', 'w') as f:
+        json.dump(einkaufsliste, f, indent=4, sort_keys=True)
+    with open('vorratskammer.json', 'w') as f:
+        json.dump(vorrats_list, f, indent=4, sort_keys=True)
+
+    if request.method == "POST":
+        if request.form.get("neu")=="Neues Rezept berechnen":
+            einkaufsliste.clear()
+            with open('einkaufsliste.json', 'w') as f:
+                json.dump(einkaufsliste, f, indent=4, sort_keys=True)
+            return render_template('index.html', rezepteliste=rezeptenamen)
+
+    return render_template('einkaufsliste.html',einkaufsliste=einkaufsliste)
 
 
 

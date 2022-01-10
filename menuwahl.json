@@ -1,5 +1,22 @@
 {
-    "anzahlPersonen": "77",
+    "anzahlPersonen": "5",
     "menu": "Kuerbissuppe",
-    "name": "Marc"
+    "name": "Nicolas",
+    "rezept_berechnet": [
+        {
+            "menge": 5,
+            "mengenart": "Stk",
+            "name": "Kuerbis"
+        },
+        {
+            "menge": 15,
+            "mengenart": "dl",
+            "name": "Rahm"
+        },
+        {
+            "menge": 10,
+            "mengenart": "dl",
+            "name": "Buillon"
+        }
+    ]
 }

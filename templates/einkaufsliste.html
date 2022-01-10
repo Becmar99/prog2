@@ -28,28 +28,32 @@
   </div>
 </nav>
 <div class="m-5">
-<h1>Hier kommt die generierte Einkaufsliste:</h1>
+<h1>Deine Einkaufsliste für das Menu {{ rezepteliste }}:</h1>
 <table class="table table-bordered">
   <thead>
   <tr>
     <th scope="col">Zutat</th>
-    <th scope="col">Menge</th>
-    <th scope="col">Mengenart</th>
+    <th scope="col">benötigte Menge</th>
+    <th scope="col">empfohlene Menge</th>
   </tr>
   </thead>
   <tbody>
-  {% for zutat in rezeptberechnet %}
+  {% for zutat in einkaufsliste %}
   <tr>
     <td>{{ zutat["name"] }}</td>
-    <td>{{ zutat["menge"] }}</td>
-    <td>{{ zutat["mengenart"] }}</td>
+    <td>{{ zutat["benötigte_anzahl"] }}</td>
+    <td>{{ zutat["mindestbestand_anzahl"] }}</td>
   </tr>
 {% endfor %}
     </tbody>
 </table>
+  <h3>Hier kannst du dir deine Einkaufsliste einfach ausdrucken</h3>
   <!-- https://stackoverflow.com/questions/18191893/generate-pdf-from-html-in-div-using-javascript wurde verwendet
   die Einkaufsliste ausdrucken zu können-->
   <input type="submit" class="btn btn-primary mt-1" onclick="window.print();" value="Print">
+  <form method="POST">
+    <input type="submit" class="btn btn-primary mt-1" name="neu" value="Neues Rezept berechnen" formaction="{{ url_for('hello') }}">
+  </form>
   </div>
 </body>
 </html>
