@@ -37,11 +37,15 @@
     <input type="text" name="vorname" placeholder="Dein Name">
     <br>
     <div class="form-group"> <!--https://www.webmart.de/web/form-generator -->
-   <label>Wähle ein Menü aus</label>
+   <label>
+       <br>
+       <h4>Wähle ein Menü aus</h4>
+   </label>
      <!-- https://stackoverflow.com/questions/60793245/dropdown-menu-in-flask-jinja-from-list für direkte übernahme von Json Datei in Dropdownmenu-->
       <select class="form-control" name="rezepteliste">
           {% for name in rezepteliste %}
             <option value="{{ name }}" SELECTED>{{ name }}</option>
+          <!-- kann hier auch verwendet werden "bitte auswählen?" -->
           {% endfor %}
         </select>
         <input type="number" class="form-control mt-3" id="formGroupExampleInput1" name="anzahl" placeholder="Anzahl Leute">

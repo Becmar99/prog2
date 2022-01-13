@@ -1,20 +1,44 @@
 [
     {
-        "menge": -86,
+        "menge": 5,
         "mengenart": "Stk",
         "mindestbestand": 5,
         "zutat": "Kuerbis"
     },
     {
-        "menge": -252,
+        "menge": -8,
         "mengenart": "dl",
         "mindestbestand": 10,
         "zutat": "Rahm"
     },
     {
-        "menge": -156,
+        "menge": 18,
         "mengenart": "dl",
-        "mindestbestand": 10,
+        "mindestbestand": 30,
         "zutat": "Buillon"
+    },
+    {
+        "menge": 10,
+        "mengenart": "Stk",
+        "mindestbestand": 10,
+        "zutat": "Kartoffeln"
+    },
+    {
+        "menge": 100,
+        "mengenart": "g",
+        "mindestbestand": 100,
+        "zutat": "Butter"
+    },
+    {
+        "menge": 100,
+        "mengenart": "g",
+        "mindestbestand": 100,
+        "zutat": "Kaese"
+    },
+    {
+        "menge": 4,
+        "mengenart": "Stk",
+        "mindestbestand": 5,
+        "zutat": "Tomaten"
     }
 ]

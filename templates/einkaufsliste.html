@@ -28,13 +28,15 @@
   </div>
 </nav>
 <div class="m-5">
-<h1>Deine Einkaufsliste für das Menu {{ rezepteliste }}:</h1>
+<h1>Deine Einkaufsliste für das Menu:</h1>
 <table class="table table-bordered">
   <thead>
   <tr>
     <th scope="col">Zutat</th>
     <th scope="col">benötigte Menge</th>
-    <th scope="col">empfohlene Menge</th>
+    <th scope="col">empfohlene Menge <br>(benötigte Menge + Mindestbestand)</th> <!-- Hinweis das bei der empfohlenen
+    Menge auch der Mindestbestand hinzugerechnet wird -->
+
   </tr>
   </thead>
   <tbody>
@@ -49,10 +51,16 @@
 </table>
   <h3>Hier kannst du dir deine Einkaufsliste einfach ausdrucken</h3>
   <!-- https://stackoverflow.com/questions/18191893/generate-pdf-from-html-in-div-using-javascript wurde verwendet
-  die Einkaufsliste ausdrucken zu können-->
+  um die Einkaufsliste ausdrucken zu können -->
   <input type="submit" class="btn btn-primary mt-1" onclick="window.print();" value="Print">
   <form method="POST">
-    <input type="submit" class="btn btn-primary mt-1" name="neu" value="Neues Rezept berechnen" formaction="{{ url_for('hello') }}">
+    {% if buttontoggle == true %}
+    <input type="submit" class="btn btn-primary mt-1" name="benoetigt" value="Benötigte Menge einkaufen">
+    <input type="submit" class="btn btn-primary mt-1" name="mindestbestand" value="empfohlene Menge einkaufen">
+    {% endif %}
+    {% if buttontoggle == false %}
+    <a href="{{ url_for('hello') }}" class="btn btn-danger mt-1">neu starten</a>
+    {% endif %}
   </form>
   </div>
 </body>

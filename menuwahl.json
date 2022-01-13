@@ -1,20 +1,20 @@
 {
-    "anzahlPersonen": "5",
-    "menu": "Kuerbissuppe",
-    "name": "Nicolas",
+    "anzahlPersonen": "6",
+    "menu": "Tomatensuppe",
+    "name": "marc",
     "rezept_berechnet": [
         {
-            "menge": 5,
+            "menge": 12,
             "mengenart": "Stk",
-            "name": "Kuerbis"
+            "name": "Tomaten"
         },
         {
-            "menge": 15,
+            "menge": 18,
             "mengenart": "dl",
             "name": "Rahm"
         },
         {
-            "menge": 10,
+            "menge": 12,
             "mengenart": "dl",
             "name": "Buillon"
         }
