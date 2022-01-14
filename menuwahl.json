@@ -1,22 +1,6 @@
 {
-    "anzahlPersonen": "6",
-    "menu": "Tomatensuppe",
-    "name": "marc",
-    "rezept_berechnet": [
-        {
-            "menge": 12,
-            "mengenart": "Stk",
-            "name": "Tomaten"
-        },
-        {
-            "menge": 18,
-            "mengenart": "dl",
-            "name": "Rahm"
-        },
-        {
-            "menge": 12,
-            "mengenart": "dl",
-            "name": "Buillon"
-        }
-    ]
+    "anzahlPersonen": "4",
+    "menu": "Kuerbissuppe",
+    "name": "Reed",
+    "rezept_berechnet": []
 }

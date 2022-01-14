@@ -19,17 +19,20 @@ Den ganzen Berechnungsaspekt wurde im Pycharm abgewickelt.
 Die Darstellung im HTML Format wurde mit Hilfe von Bootstrap Bausteinen erstellt und designed.
 Für die Abbildung der Menüs und der manuellen Erweiterung, wurden JSON Datein eingesetzt. Die JSON Datei rezepte.json 
 kann durch einfügen weiterer Menüs in der gleichen dict. Struktur beliebig ergänzt werden. Dasselbe gilt bei 
-menuwahl.json und vorratskammer.json
+menuwahl.json und vorratskammer.json. Die JSON Datein werden zur Speicherung und Weitergabe verwendet. Besonders bei der
+vorratskammer.json Datei ist, dass hier nach betätigen eines Buttons die Bestände wieder befüllt werden, wie wenn die 
+Zutaten tatsächlich eingekauft werden würden.
 
 # Ablauf des Programms
 ***
 Der Nutzer gibt im ersten Feld seinen Namen ein und wählt das gewünschte Menu und die 
-Anzahl Personen für die er kochen möchte aus. 
+Anzahl Personen für die er kochen möchte aus. Mit dem Eintragen Button werden diese Daten gespeichert.
 Durch das klicken des Berechnen Buttons wird aufgelistet, welche Zutaten und Mengen er für dieses Menu benötigt.
 In der HTML Seite Berechnung wird die Tabelle mit den Zutaten und den berechneten Mengen angegeben.
 Durch das Abgleichen mit der Vorratskammer, wird dem Nutzer eine Einkaufsliste erstellt und ausgegeben.
-Der Nutzer weiss somit, wieviel er noch einkaufen muss.
-Durch erneutes Laden der Seite kann dieser Vorgang für weitere Menüs durchgeführt werden.
+Der Nutzer weiss somit, wieviel er noch einkaufen muss. Er kann danach entschieden, ob er die mindestens benötigte Menge 
+für das Menü mit den Anzahl Personen kaufen will, oder die empfohlene Menge, um auch den Mindestbestand zu füllen.
+Klickt der User auf den Button "neu starten" wird er wieder an den Start des MenuCalc geführt.
 # Kollaboration
 ***
 Dieses Programm wurde im Rahmen des PROG2 Moduls an der FHGR erstellt. 
@@ -39,4 +42,4 @@ Es werden jedoch keine Updates folgen.
 > den Kampf anzusagen und dadurch einen Beitrag zur Nachhaltigkeit in Haushalten
 > zu liefern.
 
-Danke an die Dozierenden und Mitstudierenden, welche mich unterstützten.
+Danke an die Dozierenden und Mitstudierenden, welche mich auf dem Weg unterstützten.

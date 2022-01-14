@@ -49,16 +49,20 @@
 {% endfor %}
     </tbody>
 </table>
-  <h3>Hier kannst du dir deine Einkaufsliste einfach ausdrucken</h3>
-  <!-- https://stackoverflow.com/questions/18191893/generate-pdf-from-html-in-div-using-javascript wurde verwendet
-  um die Einkaufsliste ausdrucken zu können -->
-  <input type="submit" class="btn btn-primary mt-1" onclick="window.print();" value="Print">
-  <form method="POST">
+    <form method="POST">
     {% if buttontoggle == true %}
+    <h3>Hier kannst du dir deine Einkaufsliste einfach ausdrucken</h3>
+    <!-- https://stackoverflow.com/questions/18191893/generate-pdf-from-html-in-div-using-javascript wurde verwendet
+    um die Einkaufsliste ausdrucken zu können -->
+    <input type="submit" class="btn btn-primary mt-1" onclick="window.print();" value="Ausdruck">
+    <br>
+    <h3>Welche Mengen wirst du einkaufen? Wähle</h3>
     <input type="submit" class="btn btn-primary mt-1" name="benoetigt" value="Benötigte Menge einkaufen">
     <input type="submit" class="btn btn-primary mt-1" name="mindestbestand" value="empfohlene Menge einkaufen">
     {% endif %}
     {% if buttontoggle == false %}
+    <br>
+    <h3>Hier kannst du den MenuCalc neu starten</h3>
     <a href="{{ url_for('hello') }}" class="btn btn-danger mt-1">neu starten</a>
     {% endif %}
   </form>

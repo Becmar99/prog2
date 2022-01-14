@@ -1,18 +1,18 @@
 [
     {
-        "menge": 5,
+        "menge": 0,
         "mengenart": "Stk",
         "mindestbestand": 5,
         "zutat": "Kuerbis"
     },
     {
-        "menge": -8,
+        "menge": 0,
         "mengenart": "dl",
         "mindestbestand": 10,
         "zutat": "Rahm"
     },
     {
-        "menge": 18,
+        "menge": 16,
         "mengenart": "dl",
         "mindestbestand": 30,
         "zutat": "Buillon"
@@ -36,7 +36,7 @@
         "zutat": "Kaese"
     },
     {
-        "menge": 4,
+        "menge": 5,
         "mengenart": "Stk",
         "mindestbestand": 5,
         "zutat": "Tomaten"

@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
 </head>
 <body>
+<!-- bootstrap navbar gemäss vorlage -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container-fluid2">
     <a class="navbar-brand" href="#">MenuCalc Marc</a>
@@ -31,12 +32,10 @@
     <h1>Hallo und Willkommen im MenuCalc</h1>
     <h2>Was soll es heute werden?</h2>
     <br>
-
-
 <form method="POST">
     <input type="text" name="vorname" placeholder="Dein Name">
     <br>
-    <div class="form-group"> <!--https://www.webmart.de/web/form-generator -->
+    <div class="form-group"> <!--https://www.webmart.de/web/form-generator selectbox-->
    <label>
        <br>
        <h4>Wähle ein Menü aus</h4>
@@ -45,13 +44,12 @@
       <select class="form-control" name="rezepteliste">
           {% for name in rezepteliste %}
             <option value="{{ name }}" SELECTED>{{ name }}</option>
-          <!-- kann hier auch verwendet werden "bitte auswählen?" -->
           {% endfor %}
         </select>
         <input type="number" class="form-control mt-3" id="formGroupExampleInput1" name="anzahl" placeholder="Anzahl Leute">
         <input type="submit" class="btn btn-primary mt-1" value="Eintragen" name="eintragen"> <br>
         <a class="btn btn-primary mt-1" aria-current="page" href="{{ url_for('berechnung') }}">zur Berechnung</a>
-        <!-- wie kann ich diese zwei buttons verbinden (submit und button) Button direkt mit der entsprechenden
+        <!-- wie kann ich diese zwei buttons verbinden (submit und herf button) Button direkt mit der entsprechenden
         HTML page verlinken? -->
 
 
