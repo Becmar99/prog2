@@ -28,15 +28,17 @@
   </div>
 </nav>
 <div class="m-5">
+{% if buttontoggle == true %}<!-- damit die einkaufsmöglichkeiten angezeigt werden -->
 <h1>Deine Einkaufsliste für das Menu:</h1>
 <table class="table table-bordered">
   <thead>
   <tr>
     <th scope="col">Zutat</th>
     <th scope="col">benötigte Menge</th>
-    <th scope="col">empfohlene Menge <br>(benötigte Menge + Mindestbestand)</th> <!-- Hinweis das bei der empfohlenen
-    Menge auch der Mindestbestand hinzugerechnet wird -->
-
+    <th scope="col">empfohlene Menge <input class="btn btn-warning ml-3" style="max-width:5%"data-toggle="tooltip"
+                                            data-placement="top" title="benötigte Menge + Mindestbestand" value="i"></th>
+      <!-- https://getbootstrap.com/docs/4.0/components/tooltips/ hinweis das bei der empfohlenen menge auch der
+      mindestbestand hinzugerechnet wird -->
   </tr>
   </thead>
   <tbody>
@@ -50,21 +52,23 @@
     </tbody>
 </table>
     <form method="POST">
-    {% if buttontoggle == true %}
     <h3>Hier kannst du dir deine Einkaufsliste einfach ausdrucken</h3>
     <!-- https://stackoverflow.com/questions/18191893/generate-pdf-from-html-in-div-using-javascript wurde verwendet
-    um die Einkaufsliste ausdrucken zu können -->
+    um die einkaufsliste ausdrucken zu können -->
     <input type="submit" class="btn btn-primary mt-1" onclick="window.print();" value="Ausdruck">
     <br>
+    <br>
     <h3>Welche Mengen wirst du einkaufen? Wähle</h3>
-    <input type="submit" class="btn btn-primary mt-1" name="benoetigt" value="Benötigte Menge einkaufen">
+    <input type="submit" class="btn btn-primary mt-1" name="benoetigt" value="benötigte Menge einkaufen">
     <input type="submit" class="btn btn-primary mt-1" name="mindestbestand" value="empfohlene Menge einkaufen">
-    {% endif %}
-    {% if buttontoggle == false %}
+{% endif %}
+{% if buttontoggle == false %} <!-- um die seite anzupassen, sobald die einkäufe getätigt wurden -->
+    <br>
+        <h2>Du hast alles eingekauft und kannst los legen :) <br> Viel Spass!</h2>
     <br>
     <h3>Hier kannst du den MenuCalc neu starten</h3>
-    <a href="{{ url_for('hello') }}" class="btn btn-danger mt-1">neu starten</a>
-    {% endif %}
+    <a href="{{ url_for('hello') }}" class="btn btn-danger mt-1">Neu starten</a>
+{% endif %}
   </form>
   </div>
 </body>

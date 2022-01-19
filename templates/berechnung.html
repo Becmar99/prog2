@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Begruessungshtml</title>
+    <title>Berechnungsseite</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
 </head>
 <body>
@@ -30,8 +30,6 @@
 <div class="m-5">
 <h1>Hallo {{ vorname }} <br> Du willst also  {{ rezepteliste }} für {{ personenzahl }} Personen kochen. <br>Gute Wahl! </h1>
 <h2>Dafür brauchst du folgende Zutaten:</h2>
-<!--Hier dict mit angepasstem rezept eingeben
-Jinja durchloopen mit for die gewissen Items-->
   <!-- Für den Aufbau der Tabelle https://www.w3schools.com/html/html_tables.asp mit Bootstrap https://getbootstrap.com/docs/4.0/content/tables/ -->
 <table class="table table-bordered">
   <thead>

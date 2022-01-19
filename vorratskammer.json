@@ -1,18 +1,18 @@
 [
     {
-        "menge": 0,
+        "menge": 5,
         "mengenart": "Stk",
         "mindestbestand": 5,
         "zutat": "Kuerbis"
     },
     {
-        "menge": 0,
+        "menge": 10,
         "mengenart": "dl",
         "mindestbestand": 10,
         "zutat": "Rahm"
     },
     {
-        "menge": 16,
+        "menge": 30,
         "mengenart": "dl",
         "mindestbestand": 30,
         "zutat": "Buillon"

@@ -33,25 +33,24 @@
     <h2>Was soll es heute werden?</h2>
     <br>
 <form method="POST">
-    <input type="text" name="vorname" placeholder="Dein Name">
+    <input type="text" name="vorname" placeholder="dein Name">
     <br>
     <div class="form-group"> <!--https://www.webmart.de/web/form-generator selectbox-->
    <label>
        <br>
        <h4>Wähle ein Menü aus</h4>
    </label>
-     <!-- https://stackoverflow.com/questions/60793245/dropdown-menu-in-flask-jinja-from-list für direkte übernahme von Json Datei in Dropdownmenu-->
+     <!-- https://stackoverflow.com/questions/60793245/dropdown-menu-in-flask-jinja-from-list für direkte übernahme von json datei in dropdownmenu-->
       <select class="form-control" name="rezepteliste">
           {% for name in rezepteliste %}
             <option value="{{ name }}" SELECTED>{{ name }}</option>
           {% endfor %}
+          <option value="" disabled selected>bitte auswählen</option>
+          <!-- https://stackoverflow.com/questions/5805059/how-do-i-make-a-placeholder-for-a-select-box -->
         </select>
         <input type="number" class="form-control mt-3" id="formGroupExampleInput1" name="anzahl" placeholder="Anzahl Leute">
         <input type="submit" class="btn btn-primary mt-1" value="Eintragen" name="eintragen"> <br>
         <a class="btn btn-primary mt-1" aria-current="page" href="{{ url_for('berechnung') }}">zur Berechnung</a>
-        <!-- wie kann ich diese zwei buttons verbinden (submit und herf button) Button direkt mit der entsprechenden
-        HTML page verlinken? -->
-
 
     </div>
     <br>
