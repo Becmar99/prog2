@@ -21,7 +21,7 @@ def hello():
     menuwahl = json.load(r2)
     rezeptenamen = []
     rezepteindex = 0
-    #um die einzelnen Menü in dropdown hinzuzufügen
+    #um die einzelnen menünamen in die dropdown auswahl hinzuzufügen
     for item in rezepte_list:
         rezeptenamen.append(rezepte_list[rezepteindex]["rezeptname"])
         rezepteindex = rezepteindex + 1
@@ -108,7 +108,7 @@ def einkaufsliste():
                         einkaufsliste.append({"name": item["name"], "benötigte_anzahl": str(benoetigte_anzahl) + " " + zutat["mengenart"],
                                               "mindestbestand_anzahl": str(mindestbestand_anzahl) + " " + zutat["mengenart"]})
     if request.method == "POST":
-        if request.form.get("benoetigt") == "Benötigte Menge einkaufen":
+        if request.form.get("benoetigt") == "benötigte Menge einkaufen":
             buttontoggle = False #durch dieses statement werden die zwei einkaufsbutton verschwinden
             menuwahl["rezept_berechnet"] = []#menuwahl.json liste wird bereinigt, da ansonsten die bestehende Liste
             #immer weiter ausgebaut wird
